@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
+import User from './User'
+import userIcon from './user_icon.png'
 
-function NovoComponent() {
-  return (
-    <div className="App">
-      Criando um novo component
-    </div>
-  );
+class NovoComponent extends Component {
+  render() {
+      return (
+          <div>
+              <User name="Carolinne Rodrigues" photo={userIcon}/>
+          </div>
+      );
+    }  
 }
 
 export default NovoComponent;
