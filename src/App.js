@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NovoComponent from './NovoComponent';
+import List from './List';
 
 class App extends Component{
 
@@ -61,6 +62,7 @@ class App extends Component{
         </div>
         <button onClick={this.changeState} style={{ marginRight: '15px' }}> Mudar estado </button>
         <button onClick={this.resetState} > Resetar estado </button>
+        <List />
       </div>
     );
   }
