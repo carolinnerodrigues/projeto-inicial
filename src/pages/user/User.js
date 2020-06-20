@@ -23,9 +23,9 @@ class User extends Component {
                     <th>Name</th>
                     <th>Email</th>
                 </tr>
-                {list.map(item => {
+                {list.map((item, index) => {
                     return (
-                        <tr>
+                        <tr key={index}>
                             <td>
                                 {item.name}
                             </td>
