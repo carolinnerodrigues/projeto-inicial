@@ -8,10 +8,12 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      name: "Carolinne"
+      name: "Carolinne",
+      email: "carolinne.rodrigues7@hotmail.com"
     }
     this.changeState = this.changeState.bind(this);
     this.resetState = this.resetState.bind(this);
+    this.changeInput = this.changeInput.bind(this);
   }
 
   changeState(){
@@ -20,12 +22,44 @@ class App extends Component{
   resetState(){
     this.setState({name:"Carolinne"})
   }
+  changeInput(event){
+    let target = event.target;
+    let index = target.name;
+
+    this.setState({
+      [index]:target.value
+    })
+  }
 
   render(){
     return (
-      <div className="App">
-        <div>{this.state.name}</div>
-        <button onClick={this.changeState} > Mudar estado </button>
+      <div className="App" style={{ padding:'50px'}}>
+        <div>
+          <form>
+            <label>
+              Nome: 
+              <input 
+                type="text" 
+                name="name" 
+                value={this.state.name}
+                onChange={this.changeInput}
+                style={{ marginRight: '15px' }}
+              />
+              Email: 
+              <input 
+                type="text" 
+                name="email" 
+                value={this.state.email}
+                onChange={this.changeInput}
+              />
+            </label>
+          </form>
+        </div>
+        <div style={{ padding:'15px' }}>
+          Nome: {this.state.name} <br/> 
+          Email:{this.state.email}
+        </div>
+        <button onClick={this.changeState} style={{ marginRight: '15px' }}> Mudar estado </button>
         <button onClick={this.resetState} > Resetar estado </button>
       </div>
     );
