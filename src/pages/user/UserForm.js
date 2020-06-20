@@ -21,7 +21,7 @@ const UserFormFunc = props => {
           Name
         </label>
         <Field
-          name="name"
+          name="nome"
           component="input"
           type="text"
           placeholder="Name"
