@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NovoComponent from './NovoComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        <NovoComponent/>
-      </header>
-    </div>
-  );
+class App extends Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      name: "Carolinne"
+    }
+    this.changeState = this.changeState.bind(this);
+    this.resetState = this.resetState.bind(this);
+  }
+
+  changeState(){
+    this.setState({name:"Carolinne Rodrigues"})
+  }
+  resetState(){
+    this.setState({name:"Carolinne"})
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <div>{this.state.name}</div>
+        <button onClick={this.changeState} > Mudar estado </button>
+        <button onClick={this.resetState} > Resetar estado </button>
+      </div>
+    );
+  }
 }
 
 export default App;
