@@ -1,3 +1,5 @@
+Curso Udemy https://www.udemy.com/course/react-redux-e-integracao-de-apis/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
